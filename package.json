@@ -1,0 +1,53 @@
+{
+  "name": "go-build-constraints",
+  "version": "0.1.0",
+  "description": "Decide whether a Go source file is part of a build, matching go/build's MatchFile: //go:build and // +build lines, header rules, file-name suffixes and implied tags.",
+  "keywords": [
+    "go",
+    "golang",
+    "build-constraints",
+    "build-tags",
+    "go:build",
+    "+build",
+    "goos",
+    "goarch",
+    "go-build"
+  ],
+  "license": "MIT",
+  "author": "__AUTHOR__",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/__GH_OWNER__/go-build-constraints.git"
+  },
+  "type": "module",
+  "engines": {
+    "node": ">=20.6.0"
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "bin": {
+    "go-build-constraints": "./dist/bin.js"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "LICENSE-go"
+  ],
+  "scripts": {
+    "test": "node --test \"test/*.test.ts\"",
+    "typecheck": "tsc --noEmit",
+    "build": "rm -rf dist && tsc -p tsconfig.build.json",
+    "measure": "node bench/measure.ts",
+    "prepublishOnly": "npm run typecheck && npm test && npm run build && npm run test:dist",
+    "test:dist": "node --test test/smoke.mjs"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "typescript": "^5.7.0"
+  }
+}
