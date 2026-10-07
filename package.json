@@ -14,10 +14,10 @@
     "go-build"
   ],
   "license": "MIT",
-  "author": "__AUTHOR__",
+  "author": "kofiadeyemiq",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/__GH_OWNER__/go-build-constraints.git"
+    "url": "git+https://github.com/quietpelican42/go-build-constraints.git"
   },
   "type": "module",
   "engines": {
